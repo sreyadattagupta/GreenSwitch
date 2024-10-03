@@ -1,4 +1,4 @@
-# Fuel Switch to Carbon Credits DApp
+# Green Switch: Carbon Credit Issuance Platform
 
 ### A decentralized application (DApp) for tracking fuel usage in vehicle fleets, calculating carbon emissions reductions, and converting those reductions into carbon credits using blockchain technology.
 
