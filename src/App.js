@@ -1,31 +1,17 @@
 import React from "react";
-import { useContract } from "./hooks/useContract";
-import AddFuelData from "./components/AddFuelData";
-import CalculateCOEF from "./components/calculateCOEF";
-import CalculateEmissions from "./components/CalculateEmissions";
-import VVBVoting from "./components/VVBVoting";
-import MintCredits from "./components/MintCredits";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Homepage from "./components/Homepage";
+import ProductPage from "./components/ProductPage";
 
-const App = () => {
-  const { contract, currentAccount, connectWallet } = useContract();
-
+function App() {
   return (
-    <div className="App">
-      <h1>Fuel Switch Carbon Credits DApp</h1>
-      <p>Connected Account: {currentAccount || "Not connected"}</p>
-      <button onClick={connectWallet}>Connect Wallet</button>
-
-      {currentAccount && contract && (
-        <>
-          <AddFuelData contract={contract} currentAccount={currentAccount} />
-          <CalculateCOEF contract={contract} />
-          <CalculateEmissions contract={contract} currentAccount={currentAccount} />
-          <VVBVoting contract={contract} currentAccount={currentAccount} />
-          <MintCredits contract={contract} currentAccount={currentAccount} />
-        </>
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/product" element={<ProductPage />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
