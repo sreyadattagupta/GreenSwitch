@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { ethers } from "ethers"; // Ensure ethers is imported
 import StyledContainer from "./StyledContainer"; // Import styled container
 import styled from "styled-components";
-import { ethers } from "ethers";
 
 const InputField = styled.input`
   width: 100%;
@@ -34,12 +34,13 @@ const WalletButton = styled.button`
 const AddFuelData = ({ contract, currentAccount }) => {
   const [ethanolConsumption, setEthanolConsumption] = useState("");
   const [gasolineConsumption, setGasolineConsumption] = useState("");
+  const [fleetOwnerAddress, setFleetOwnerAddress] = useState(""); // New state for fleet owner address
 
   const addFuelData = async () => {
-    if (contract) {
+    if (contract && fleetOwnerAddress) {
       try {
         const txn = await contract.addFuelData(
-          currentAccount,
+          fleetOwnerAddress, // Pass the fleet owner address
           ethers.utils.parseUnits(ethanolConsumption, 18),
           ethers.utils.parseUnits(gasolineConsumption, 18)
         );
@@ -48,12 +49,20 @@ const AddFuelData = ({ contract, currentAccount }) => {
       } catch (error) {
         console.error("Error adding fuel data:", error);
       }
+    } else {
+      alert("Please fill in all fields and provide a valid fleet owner address.");
     }
   };
 
   return (
     <StyledContainer>
       <h3>Add Fuel Data</h3>
+      <InputField
+        type="text"
+        placeholder="Fleet Owner Address"
+        value={fleetOwnerAddress}
+        onChange={(e) => setFleetOwnerAddress(e.target.value)} // Update fleet owner address
+      />
       <InputField
         type="text"
         placeholder="Ethanol Consumption (liters)"
