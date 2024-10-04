@@ -17,6 +17,7 @@ The DApp interacts with smart contracts deployed on the **Neo X testnet** and su
 
 The frontend is built using **React**, while **ethers.js** handles the smart contract interactions.
 
+Deployed the smart contract on NeoX Testnet
 Contract Address ```0x595a8b16d29e6D9Ec96D800a1fDa439e760BC04F```
 
 ---
