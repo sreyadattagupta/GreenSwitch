@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StyledContainer from "./StyledContainer"; // Import styled container
+import StyledContainer from "./StyledContainer"; 
 import styled from "styled-components";
 import { ethers } from "ethers";
 

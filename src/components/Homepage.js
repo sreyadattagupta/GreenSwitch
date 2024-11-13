@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
-// Styled components for the homepage
 const HomepageWrapper = styled.div`
   background: black;
   color: white;
@@ -79,8 +78,6 @@ const Homepage = () => {
   return (
     <HomepageWrapper>
       <BackgroundAnimation />
-      {/* <Stars /> */}
-      {/* <Planet /> */}
       <Title>Green Switch: A Carbon Credit Issuance Platform</Title>
       <Description>
         A decentralized solution implementing Verra VM0019 methodology to issue carbon credits using decentaralized voting for projects based on Conversion from Ethanol to Gasoline Flex Fuel Vehicles.

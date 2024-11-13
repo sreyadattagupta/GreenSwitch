@@ -1,5 +1,5 @@
 import React from "react";
-import StyledContainer from "./StyledContainer"; // Import styled container
+import StyledContainer from "./StyledContainer";
 import styled from "styled-components";
 
 const WalletButton = styled.button`
@@ -19,7 +19,7 @@ const MintCredits = ({ contract, currentAccount }) => {
   const mintCredits = async () => {
     if (contract) {
       try {
-        const txn = await contract.mintCarbonCredits(currentAccount, 100); // 100 tokens as an example
+        const txn = await contract.mintCarbonCredits(currentAccount, 100); 
         await txn.wait();
         alert("Carbon credits minted successfully!");
       } catch (error) {

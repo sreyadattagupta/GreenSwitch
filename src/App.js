@@ -7,9 +7,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Route for the homepage */}
         <Route path="/" element={<Homepage />} />
-        {/* Route for the product page with all sub-routes */}
         <Route path="/product/*" element={<ProductPage />} />
       </Routes>
     </Router>

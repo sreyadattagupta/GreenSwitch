@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ethers } from "ethers"; // Ensure ethers is imported
-import StyledContainer from "./StyledContainer"; // Import styled container
+import { ethers } from "ethers"; 
+import StyledContainer from "./StyledContainer"; 
 import styled from "styled-components";
 
 const InputField = styled.input`
@@ -34,7 +34,7 @@ const WalletButton = styled.button`
 const AddFuelData = ({ contract, currentAccount }) => {
   const [ethanolConsumption, setEthanolConsumption] = useState("");
   const [gasolineConsumption, setGasolineConsumption] = useState("");
-  const [fleetOwnerAddress, setFleetOwnerAddress] = useState(""); // New state for fleet owner address
+  const [fleetOwnerAddress, setFleetOwnerAddress] = useState(""); 
 
   const addFuelData = async () => {
     if (contract && fleetOwnerAddress) {
@@ -61,7 +61,7 @@ const AddFuelData = ({ contract, currentAccount }) => {
         type="text"
         placeholder="Fleet Owner Address"
         value={fleetOwnerAddress}
-        onChange={(e) => setFleetOwnerAddress(e.target.value)} // Update fleet owner address
+        onChange={(e) => setFleetOwnerAddress(e.target.value)} 
       />
       <InputField
         type="text"
